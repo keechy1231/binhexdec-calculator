@@ -17,7 +17,7 @@ def hex_to_dec():
 
 def dec_to_hex():
     dec_num = int(input("Please enter your number you would like to convert to Hex"))
-    hex_num = hex(dec_num)         git
+    hex_num = hex(dec_num)
     print (hex_num)
 
 
