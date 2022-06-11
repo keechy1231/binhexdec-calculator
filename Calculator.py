@@ -1,4 +1,4 @@
-#Simple calculator
+#Simple Binary, Hex and Decimal conversion calculator - Created by Keechy
 import time
 
 binary_num = []
@@ -6,7 +6,7 @@ decimal_num = []
 hex_num = []
 
 
-print("Binhexdec Calc Version 1.0\n\n\n")
+print("Binhexdec Calc Version 1.1\n\n\n")
 
 def dec_to_bin():
     dec_num = int(input("What number would you like to convert into binary?\n\n"))
@@ -18,7 +18,7 @@ def dec_to_bin():
 def bin_to_dec():
     bin_num = input("What Binary number would you like to convert into decimal?(Please start your string with 0b)\n\n")
     decimal_num.append(int(bin_num, 2))
-    pring("\n")
+    print("\n")
     print ("Your Decinal number(s) are:", decimal_num)
     time.sleep(0.6)
 
@@ -40,19 +40,34 @@ def dec_to_hex():
 choice = int(input ("What type of number would you like to convert? \nPress 1 for Decimal to Binary\nPress 2 for Binary to Decimal\nPress 3 for Hex to Decimal\nPress 4 for Decimal to Hex\n\n"))
 while choice == 1:
     dec_to_bin()
-    choice = int(input("\nDo you want to convert another number to binary?\nPress 1 for yes: \nPress 2 for no and to exit\n\n"))
+    choice = int(input("\nDo you want to convert another number to binary?\nPress 1 for yes: \nPress 5 for no and to exit\n\n"))
 
 while choice == 2:
     bin_to_dec()
-    choice = int(input("\nDo you want to convert another Binary number to Decimal2?\nPress 2 for yes: \nPress 3 for no and to exit\n\n"))
+    choice = int(input("\nDo you want to convert another Binary number to Decimal2?\nPress 2 for yes: \nPress 5 for no and to exit\n\n"))
 
 while choice == 3:
     hex_to_dec()
-    choice = int(input("\nDo you want to convert another Hex number to Decimal?\nPress 3 for yes: \nPress 4 for no and to exit\n\n"))
+    choice = int(input("\nDo you want to convert another Hex number to Decimal?\nPress 3 for yes: \nPress 5 for no and to exit\n\n"))
 
 while choice == 4:
     dec_to_hex()
     choice = int(input("\nDo you want to convert another number to Hex?\nPress 4 for yes: \nPress 5 for no and to exit\n\n"))
 
-while choice != 1 or 2 or 3 or 4:
+while choice == 5:
+    exit()
+
+while choice != 1 or 2 or 3 or 4 or 5:
     choice = int(input("\nPlease choose a valid option\n\n"))
+    if choice == 1:
+        dec_to_bin()
+        choice = int(input("\nDo you want to convert another number to binary?\nPress 1 for yes: \nPress 5 for no and to exit\n\n"))
+    if choice == 2:
+        bin_to_dec()
+        choice = int(input("\nDo you want to convert another Binary number to Decimal2?\nPress 2 for yes: \nPress 5 for no and to exit\n\n"))
+    if choice == 3:
+        hex_to_dec()
+        choice = int(input("\nDo you want to convert another Hex number to Decimal?\nPress 3 for yes: \nPress 5 for no and to exit\n\n"))
+    if choice == 4:
+        dec_to_hex()
+        choice = int(input("\nDo you want to convert another number to Hex?\nPress 4 for yes: \nPress 5 for no and to exit\n\n"))
